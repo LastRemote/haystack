@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Fixed error handling in AsyncPipeline for non-async components. Previously, when a
+    non-async component raised an error, it wasn't properly wrapped with PipelineRuntimeError
+    which made it difficult to identify which component failed. Now errors from both async
+    and non-async components are consistently wrapped with PipelineRuntimeError including
+    component name and type information.
